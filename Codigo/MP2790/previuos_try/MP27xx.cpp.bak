@@ -1,0 +1,45 @@
+/*
+ * File:   MP27xx.cpp
+ * Author: Alonso Garrido
+*
+* Created on February 16, 2016, 12:19 AM
+*/
+
+#include <Arduino.h>
+#include "MP27xx.hpp"
+
+
+#ifndef DEBUG
+// #define DEBUG 0  // Uncomment to enable debug output
+#endif
+
+//Base definitions
+MP27XX_Base::MP27XX_Base(uint8_t address, void *wireObj):devAddr(address), wireObj(wireObj) {
+}
+
+//Basic Functions
+bool MP27XX_Base::testConnection() {
+  uint16_t deviceId = DEVICE_ADD();
+  return (deviceId == 0x01);
+}
+
+uint16_t MP27XX_Base::readAddress(uint8_t value) {
+    I2Cdev::readWord(devAddr, value, buffer, I2Cdev::readTimeout, wireObj);
+    return buffer[0];
+}
+
+//Register functions
+uint16_t MP27XX_Base::DEVICE_ADD() {
+    I2Cdev::readBitsW(devAddr, COMM_CFG, DEVICE_ADD_SB, DEVICE_ADD_LEN, buffer, I2Cdev::readTimeout, wireObj);
+    return buffer[0];
+}
+
+uint16_t MP27XX_Base::DEVICE_ADD(uint16_t value) {
+    I2Cdev::writeBitsW(devAddr, COMM_CFG, DEVICE_ADD_SB, DEVICE_ADD_LEN, value, wireObj);
+    return buffer[0];
+}
+
+uint16_t MP27XX_Base::DIE_TEMP_HOT() {
+    I2Cdev::readBitsW(devAddr, DIE_OT, DIE_TEMP_HOT_SB, DIE_TEMP_HOT_LEN, buffer, I2Cdev::readTimeout, wireObj);
+    return buffer[0];
+}
