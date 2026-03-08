@@ -87,4 +87,5 @@ function plot_scope_data_conv(fileName, labelInfo, axisLimits, fileOutputName)
 
     % Save plot
     exportgraphics(gcf,fileOutputName);
+    
 end
