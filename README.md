@@ -6,3 +6,9 @@ Alonso Cristián Garrido Díaz
 Memorista de Ingeniería civil Eléctrica 
 
 Universidad de Concepción
+
+# Repositorio-B1P0
+
+Revisa el repositorio del proyecto en curso:
+
+https://github.com/Bastineitor73/Biped-Robot
