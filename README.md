@@ -20,5 +20,5 @@ https://github.com/Bastineitor73/Biped-Robot
 <img width="878" height="458" alt="PCB_BMS_MOS_Convertidores" src="https://github.com/user-attachments/assets/ce2bce34-6036-414c-aecc-46045dc12cc9" />
 
 
-<img width="854" height="540" alt="3d_assembly" src="https://github.com/user-attachments/assets/53c7a2af-4de9-41f1-8452-4f2308eaa1be" />
+<img width="854" height="540" alt="3d_assembly" src="https://github.com/user-attachments/assets/aacb56aa-098a-4faa-8ef8-2031f41ccc5c" />
 
